@@ -1,9 +1,9 @@
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.contrib.admin.views.decorators import staff_member_required
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import NewItemForm, EditItemForm
+from .forms import EditItemForm, NewItemForm
 from .models import Category, Item
 
 
@@ -21,7 +21,7 @@ def products_list(request):
 
     return render(
         request,
-        "products/products_list.html",
+        "products/list.html",
         {
             "items": items,
             "query": query,
