@@ -49,7 +49,10 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     # Third Party Apps
     # Custom Apps
-    "apps.chat.ChatConfig",
+    "apps.chat.apps.ChatConfig",
+    "apps.accounts.apps.AccountsConfig",
+    "apps.coreCoreConfig",
+    "apps.products.ProductsConfig",
 ]
 
 MIDDLEWARE = [
