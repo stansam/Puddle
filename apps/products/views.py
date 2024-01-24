@@ -7,7 +7,7 @@ from .forms import EditItemForm, NewItemForm
 from .models import Category, Item
 
 
-def products_list(request):
+def items(request):
     query = request.GET.get("query", "")
     category_id = request.GET.get("category", 0)
     categories = Category.objects.all()
@@ -38,7 +38,7 @@ def detail(request, pk):
     )[0:3]
 
     return render(
-        request, "item/detail.html", {"item": item, "related_items": related_items}
+        request, "products/detail.html", {"item": item, "related_items": related_items}
     )
 
 
@@ -52,13 +52,13 @@ def new(request):
             item.created_by = request.user
             item.save()
 
-            return redirect("item:detail", pk=item.id)
+            return redirect("products:detail", pk=item.id)
     else:
         form = NewItemForm()
 
     return render(
         request,
-        "item/form.html",
+        "products/form.html",
         {
             "form": form,
             "title": "New item",
@@ -76,13 +76,13 @@ def edit(request, pk):
         if form.is_valid():
             form.save()
 
-            return redirect("item:detail", pk=item.id)
+            return redirect("products:detail", pk=item.id)
     else:
         form = EditItemForm(instance=item)
 
     return render(
         request,
-        "item/form.html",
+        "products/form.html",
         {
             "form": form,
             "title": "Edit item",
