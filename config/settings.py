@@ -51,8 +51,8 @@ INSTALLED_APPS = [
     # Custom Apps
     "apps.chat.apps.ChatConfig",
     "apps.accounts.apps.AccountsConfig",
-    "apps.coreCoreConfig",
-    "apps.products.ProductsConfig",
+    "apps.core.apps.CoreConfig",
+    "apps.products.apps.ProductsConfig",
 ]
 
 MIDDLEWARE = [
