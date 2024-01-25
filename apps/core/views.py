@@ -31,3 +31,6 @@ def terms(request):
 
 def privacy(request):
     return render(request, "core/privacy.html")
+
+def cart(request):
+    return render(request, "core/cart.html")
