@@ -73,7 +73,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [BASE_DIR / "templates", BASE_DIR / "templates" / "accounts"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -165,3 +165,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config("EMAIL_HOST_USER", default=" ")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default=" ")
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="test@mail.com")
+
+
+ACCOUNT_SIGNUP_REDIRECT_URL = "account_login"
+LOGIN_REDIRECT_URL = "core:index"
