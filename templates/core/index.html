@@ -29,7 +29,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-3">
         {% for category in categories %}
         <div class="mb-6 h-full">
-            <a href="#" class="block h-full">
+            <a href="{% url 'products:list' %}?query={{ query }}&category={{ category.id }}" class="block h-full">
                 <div class="p-6 bg-white rounded-xl">
                     <h2 class="text-xl sm:text-2xl md:text-3xl">{{ category.name }}</h2>
                     <p class="text-gray-500">{{ category.items.count }} items</p>
