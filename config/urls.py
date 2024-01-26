@@ -25,7 +25,7 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("accounts/", include("apps.accounts.urls")),
     path("products/", include("apps.products.urls")),
-    path("chat/", include("apps.chat.urls")),
+    # path("chat/", include("apps.chat.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
