@@ -2,7 +2,10 @@
 
 <header class="bg-gray-200">
     <nav class="py-4 px-6 sm:py-6 sm:px-10 flex justify-between items-center border-b border-gray-200">
-        <a href="/" class="text-xl font-semibold w-24"><img src="{% static "img/logo.png" %}" alt=""></a>
+        <a href="/" class="text-xl font-semibold flex items-center justify-center">
+			<img class="w-24" src="{% static "img/logo.png" %}" alt="">
+			<span>Gamer Electrinics KE</span>
+		</a>
 
 		<div class="space-x-6">
 			{% if request.user.is_staff %}
