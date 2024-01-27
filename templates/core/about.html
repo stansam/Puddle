@@ -1,1 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<div class="flex sm:flex-row items-center mx-10">
+	<img src="{% static 'img/logo.jpeg' %}" alt="" class="w-56 mx-auto my-8 sm:mr-8 rounded-full">
+	<section>
+		<p class="text-lg leading-6">
+			Welcome to GAMER ELECTRONICS KENYA, your reliable source for high-quality electronic products. We are
+			located
+			Along Tomboya Accra Road, Cookie House Building, Sn 505, Nairobi. At GAMER ELECTRONICS KENYA, we pride
+			ourselves
+			in offering a wide range of electronic devices and accessories to meet your gaming and technological needs.
+		</p>
+	</section>
+</div>
+
+<section class="my-8 px-4 sm:px-8 md:px-16 lg:px-20">
+	<p class="text-lg leading-6">
+		With a commitment to providing exceptional service and delivering top-notch products, we have established
+		ourselves as a trusted name in the electronics market. Our team is dedicated to ensuring that you have a
+		seamless and enjoyable experience when shopping with us. We also offer Kenya-wide deliveries to bring
+		convenience to your doorstep.
+	</p>
+</section>
+
+{% endblock body %}

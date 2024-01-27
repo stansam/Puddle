@@ -7,7 +7,7 @@
 
     <div class="space-y-6">
         {% for conversation in conversations %}
-            <a href="{% url 'conversation:detail' conversation.id %}">
+            <a href="{% url 'chat:detail' conversation.id %}">
                 <div class="p-4 md:p-6 lg:p-8 flex bg-gray-100 rounded-xl">
                     <div class="pr-4 md:pr-6 lg:pr-8">
                         <img src="{{ conversation.item.image.url }}" class="w-16 md:w-20 rounded-xl">
