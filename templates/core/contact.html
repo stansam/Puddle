@@ -1,1 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}Contact Us{% endblock title %}
+{% block body %}
+<section class="my-8 px-4 sm:px-8 md:px-16 lg:px-20">
+	<img src="{% static 'img/contact.png' %}" class="m-auto rounded-3xl" alt="">
+	<p class="text-lg leading-6">
+		For any inquiries or assistance, feel free to contact us using the information below:
+	</p>
+</section>
+<section class="my-8 px-4 sm:px-8 md:px-16 lg:px-20">
+	<address>
+		<p class="text-lg leading-6">Email: <a href="mailto:Felixkomen3981@gmail.com"
+				class="text-teal-500 hover:underline">Felixkomen3981@gmail.com</a></p>
+		<p class="text-lg leading-6">Location: Along Tomboya Accra Road, Cookie House Building, Sn 505, Nairobi</p>
+	</address>
+</section>
+
+<section class="my-8 px-4 sm:px-8 md:px-16 lg:px-20">
+	<p class="text-lg leading-6">
+		We also provide Kenya-wide deliveries for your convenience. Reach out to us, and our team will be happy to
+		assist you!
+	</p>
+</section>
+{% endblock body %}
