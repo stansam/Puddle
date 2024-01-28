@@ -1,2 +1,2 @@
-release: python manage.py migrate --no-input
+release: ./heroku-release.sh
 web: gunicorn config.wsgi --log-file -
