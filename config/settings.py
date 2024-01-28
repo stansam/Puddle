@@ -101,7 +101,8 @@ if USE_SQLITE:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-elif config("DATABASE_URL"):
+else:
+    print("\n\n\n\n\n\n\n\n\nUsing the right database\n\n\n\n\n\n\n\n\n\n\n\n")
     DATABASES = {"default": config("DATABASE_URL", cast=db_url)}
 
 
