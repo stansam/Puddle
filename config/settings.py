@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -100,7 +101,8 @@ if USE_SQLITE:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-elif config("DATABASE_URL"):
+else:
+    print("\n\n\n\n\n\n\n\n\nUsing the right database\n\n\n\n\n\n\n\n\n\n\n\n")
     DATABASES = {"default": config("DATABASE_URL", cast=db_url)}
 
 
@@ -142,6 +144,9 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "media/"
