@@ -43,10 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Authentication and Authorization
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
     # Third Party Apps
     "django_browser_reload",
     # Custom Apps
