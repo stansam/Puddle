@@ -39,6 +39,7 @@
         {% endif %}
 
         <button class="py-3 px-6 text-lg bg-teal-500 hover:bg-teal-700 rounded text-white w-full">Submit</button>
+        <span class="text-gray-500">Already have an account? Log into your account <a href="{% url "accounts:login" %}" class="text-teal-500 hover:text-teal-700">here</a></span>
     </form>
 </div>
 {% endblock body %}

@@ -43,10 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Authentication and Authorization
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
     # Third Party Apps
     "django_browser_reload",
     # Custom Apps
@@ -58,10 +54,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
-    "allauth.account.middleware.AccountMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -100,7 +96,8 @@ if USE_SQLITE:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-elif config("DATABASE_URL"):
+else:
+    print("\n\n\n\n\n\n\n\n\nUsing the right database\n\n\n\n\n\n\n\n\n\n\n\n")
     DATABASES = {"default": config("DATABASE_URL", cast=db_url)}
 
 
@@ -142,6 +139,9 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "media/"
@@ -168,5 +168,4 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default=" ")
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="test@mail.com")
 
 
-ACCOUNT_SIGNUP_REDIRECT_URL = "account_login"
 LOGIN_REDIRECT_URL = "core:index"
